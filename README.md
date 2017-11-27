@@ -51,7 +51,7 @@ $requestParams = array(
   'order_description' => 'iPhone 6-S',
   'return_url'    => url('test_r')
 );
-PayFort::SADAD($requestParams);
+PayFort::RedirectionPay($requestParams);
 ```
 
 # 3- Return URL Configuration

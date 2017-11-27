@@ -1,10 +1,10 @@
 <?php
 
-namespace AhyadEssam\PayFort;
+namespace Payfort;
 
 use Illuminate\Support\ServiceProvider;
 
-class PayFortServiceProvider extends ServiceProvider
+class PayfortServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -16,7 +16,12 @@ class PayFortServiceProvider extends ServiceProvider
       if(!file_exists(config_path('payfort.php'))){
         $this->publishes([
           __DIR__.'/../config/payfort.php' => config_path('payfort.php')
-        ], 'config');
+        ]);
+
+        $this->publishes([
+          __DIR__.'/../lang' => resource_path('lang'),
+          __DIR__.'/../views' => resource_path('views'),
+        ]);
       }
     }
 

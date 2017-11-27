@@ -1,8 +1,8 @@
 {
   "name": "ahyadessam/payfort",
-  "description": "AdminLTE template for Laravel",
-  "keywords": ["laravel", "adminlte", "admin", "template", "bootstrap"],
-  "homepage": "https://github.com/ahyadessam/Laravel-AdminLTE",
+  "description": "laravel payfort integration",
+  "keywords": ["laravel", "payfort", "integration", "api", "packagist"],
+  "homepage": "https://github.com/ahyadessam/payfort",
   "license": "MIT",
   "authors": [
     {
@@ -13,12 +13,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "AhyadEssam\\PayFort\\": "src/"
+      "Payfort\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "AhyadEssam\\PayFort\\": "src/"
+      "Payfort\\": "src/"
     }
   },
   "require": {

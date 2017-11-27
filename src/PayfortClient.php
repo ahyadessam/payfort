@@ -48,9 +48,9 @@ class PayFortClient {
     $curr_arr = ['BHD', 'IQD', 'JOD', 'KWD', 'LYD', 'OMR', 'TND'];
 
     if(in_array($currency, $curr_arr))
-      return intval(10 * pow(10, 3));
+      return intval($price * pow(10, 3));
     else
-      return intval(10 * pow(10, 2));
+      return intval($price * pow(10, 2));
   }
 
   public function signature($parameters, $action='request'){

@@ -2,6 +2,7 @@
 
 return [
   'test_mode'             => true,
+  'command'               => 'AUTHORIZATION',
   'access_code'           => '',
   'merchant_identifier'   => '',
   'sha_type'              => 'sha256',

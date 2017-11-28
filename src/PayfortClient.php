@@ -10,6 +10,7 @@ class PayFortClient {
   private $_sha_type;
   private $_sha_request;
   private $_sha_response;
+  private $_command;
 
   public function __construct(){
     if(config('payfort.test_mode'))
@@ -17,6 +18,7 @@ class PayFortClient {
     else
       $this->_url = 'https://checkout.payfort.com/FortAPI/paymentPage';
 
+    $this->_command       = config('payfort.command');
     $this->_access_code   = config('payfort.access_code');
     $this->_identifier    = config('payfort.merchant_identifier');
     $this->_sha_type      = config('payfort.sha_type');
@@ -28,7 +30,7 @@ class PayFortClient {
     if(isset($parameters_array['amount']) && isset($parameters_array['currency']))
       $parameters_array['amount'] = $this->getPrice($parameters_array['currency'], $parameters_array['amount']);
 
-    $parameters_array['command'] = 'AUTHORIZATION';
+    $parameters_array['command'] = $this->_command;
     $parameters_array['access_code'] = $this->_access_code;
     $parameters_array['merchant_identifier'] = $this->_identifier;
     $parameters_array['language'] = App()->getLocale();
